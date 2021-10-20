@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const MainDiv = styled.div`
-  width: 85%;
+  width: 90%;
   overflow-x: hidden;
   overflow-y: auto;
 `;
