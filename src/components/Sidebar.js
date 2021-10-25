@@ -1,15 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import mainImg from "../images/main_logo.png";
-import snsImg from "../images/btn_sns.png";
-import blackImg from "../images/btn_black.png";
 import { useHistory } from "react-router";
 
 const Container = styled.div`
   width: 10%;
-  background: #faebd7;
+  background: #483d8b;
   min-width: calc(19.2px * 14);
-  min-height: calc(10.8px * 70);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,13 +13,12 @@ const Container = styled.div`
 `;
 
 const MainLogo = styled.div`
-  height: 116px;
-  width: 125px;
-  min-height: 116px;
-  min-width: 125px;
-  background-image: url(${mainImg});
-  background-size: 100% 100%;
-  margin: 10% 0;
+  height: 140px;
+  min-height: 160px;
+  width: 140px;
+  background-image: url("https://user-images.githubusercontent.com/62426665/138452293-fc4ed240-cdc4-442d-b86f-96f49b82d5b4.png");
+  background-size: 140px 160px;
+  margin: 50px 0;
   cursor: pointer;
 `;
 
@@ -33,12 +28,10 @@ const MenuContainer = styled.ul`
   align-items: center;
   padding: 0 0;
   margin: 0;
-  height: calc(10.8px * 40);
-  min-height: calc(10.8px * 30);
 `;
 
 const Menu = styled.li`
-  margin: 10%;
+  margin: 20px;
   font-size: 1.5rem;
   width: 175px;
   text-align: center;
@@ -47,25 +40,8 @@ const Menu = styled.li`
   list-style: none;
   font-weight: bold;
   :hover {
-    color: green;
+    color: white;
   }
-`;
-
-const SNSImg = styled.div`
-  width: 124px;
-  height: 45px;
-  padding: 0;
-  margin-top: 70%;
-  background-image: url(${snsImg});
-  cursor: pointer;
-`;
-
-const BLACKImg = styled.div`
-  width: 123px;
-  height: 31px;
-  margin-top: 3vh;
-  background-image: url(${blackImg});
-  cursor: pointer;
 `;
 
 function Sidebar() {
@@ -79,20 +55,12 @@ function Sidebar() {
     <Container>
       <MainLogo onClick={toHome} />
       <MenuContainer>
-        <Menu>방탈출?</Menu>
+        <Menu>홈</Menu>
         <Menu>테마</Menu>
         <Menu>오시는길</Menu>
         <Menu>예약하기</Menu>
         <Menu>예약조회/취소</Menu>
       </MenuContainer>
-      <SNSImg
-        onClick={() =>
-          window.open("https://www.instagram.com/secretgarden_esc.official/")
-        }
-      />
-      <BLACKImg
-        onClick={() => window.open("http://www.black-labyrinth.com/")}
-      />
     </Container>
   );
 }
