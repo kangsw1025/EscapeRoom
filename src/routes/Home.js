@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 import PublicContainer from "../components/PublicContainer";
 import CautionContainer from "../components/CautionContainer";
 import IntroduceContainer from "../components/IntroduceContainer";
+import ThemaContainer from "../components/ThemaContainer";
 
 const MainBG = styled.div`
   position: relative;
@@ -26,7 +27,7 @@ function Home() {
         <MainBG />
         <IntroduceContainer />
         <CautionContainer />
-        <div className="Thema"></div>
+        <ThemaContainer />
         <div className="map"></div>
       </MainContainer>
     </PublicContainer>
