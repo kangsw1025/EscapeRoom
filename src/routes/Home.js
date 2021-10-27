@@ -14,7 +14,8 @@ const MainBG = styled.div`
   width: 100%;
   min-width: calc(19.2px * 86);
   min-height: calc(10.8px * 80);
-  background-image: url("https://user-images.githubusercontent.com/62426665/138460223-28f329a8-1886-4547-bbaf-8be8b2e8385b.jpg");
+  background-color: #fdf4e3;
+  background-image: url("https://user-images.githubusercontent.com/62426665/139088792-42ba7360-57ac-4fbd-b4b7-6fe909826692.png");
   background-size: 100% 100%;
   background-position: center;
 `;
