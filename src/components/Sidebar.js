@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 
 const Container = styled.div`
   width: 10%;
-  background: #483d8b;
+  background: #b7adc9;
   min-width: calc(19.2px * 14);
   display: flex;
   flex-direction: column;
@@ -36,31 +36,49 @@ const Menu = styled.li`
   width: 175px;
   text-align: center;
   padding: 0;
+  color: white;
   cursor: pointer;
   list-style: none;
   font-weight: bold;
   :hover {
-    color: white;
+    color: #7a6f95;
   }
+`;
+
+const Github = styled.div`
+  margin-top: 40%;
+  width: calc(666px * 0.35);
+  min-width: calc(666px * 0.35);
+  height: calc(375px * 0.4);
+  min-height: calc(375px * 0.4);
+  background-image: url("https://user-images.githubusercontent.com/62426665/139083738-553709a8-4e53-479f-b5c9-54a8777b53de.png");
+  background-size: 100% 100%;
+  cursor: pointer;
 `;
 
 function Sidebar() {
   const history = useHistory();
 
-  const toHome = () => {
+  const clickMain = () => {
     history.push("/");
   };
-
+  const clickHome = () => {};
+  const clickTheme = () => {};
+  const clickMap = () => {};
+  const clickGithub = () => {
+    window.open("https://github.com/kangsw1025/EscapeRoom");
+  };
   return (
     <Container>
-      <MainLogo onClick={toHome} />
+      <MainLogo onClick={clickMain} />
       <MenuContainer>
-        <Menu>홈</Menu>
-        <Menu>테마</Menu>
-        <Menu>오시는길</Menu>
+        <Menu onClick={clickHome}>홈</Menu>
+        <Menu onClick={clickTheme}>테마</Menu>
+        <Menu onClick={clickMap}>오시는길</Menu>
         <Menu>예약하기</Menu>
         <Menu>예약조회/취소</Menu>
       </MenuContainer>
+      <Github onClick={clickGithub} />
     </Container>
   );
 }
