@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 10%;
@@ -57,26 +57,31 @@ const Github = styled.div`
 `;
 
 function Sidebar() {
-  const history = useHistory();
-
-  const clickMain = () => {
-    history.push("/");
-  };
-  const clickHome = () => {};
-  const clickTheme = () => {};
-  const clickMap = () => {};
   const clickGithub = () => {
     window.open("https://github.com/kangsw1025/EscapeRoom");
   };
+
   return (
     <Container>
-      <MainLogo onClick={clickMain} />
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <MainLogo />
+      </Link>
       <MenuContainer>
-        <Menu onClick={clickHome}>홈</Menu>
-        <Menu onClick={clickTheme}>테마</Menu>
-        <Menu onClick={clickMap}>오시는길</Menu>
-        <Menu>예약하기</Menu>
-        <Menu>예약조회/취소</Menu>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Menu>홈</Menu>
+        </Link>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Menu>테마</Menu>
+        </Link>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Menu>오시는길</Menu>
+        </Link>
+        <Link to="/book" style={{ textDecoration: "none" }}>
+          <Menu>예약하기</Menu>
+        </Link>
+        <Link to="/bookCheck" style={{ textDecoration: "none" }}>
+          <Menu>예약조회/취소</Menu>
+        </Link>
       </MenuContainer>
       <Github onClick={clickGithub} />
     </Container>

@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import MainContainer from "../components/MainContainer";
-import Sidebar from "../components/Sidebar";
-import PublicContainer from "../components/PublicContainer";
-import CautionContainer from "../components/CautionContainer";
-import IntroduceContainer from "../components/IntroduceContainer";
-import ThemaContainer from "../components/ThemaContainer";
-import Map from "../components/Map";
+import HomeCaution from "../components/HomeCaution";
+import HomeIntroduce from "../components/HomeIntroduce";
+import HomeThemaContainer from "../components/HomeThemaContainer";
+import HomeMap from "../components/HomeMap";
 
 const MainBG = styled.div`
   position: relative;
@@ -23,16 +21,13 @@ const MainBG = styled.div`
 
 function Home() {
   return (
-    <PublicContainer>
-      <Sidebar />
-      <MainContainer>
-        <MainBG />
-        <IntroduceContainer />
-        <CautionContainer />
-        <ThemaContainer />
-        <Map />
-      </MainContainer>
-    </PublicContainer>
+    <MainContainer>
+      <MainBG />
+      <HomeIntroduce />
+      <HomeCaution />
+      <HomeThemaContainer />
+      <HomeMap />
+    </MainContainer>
   );
 }
 

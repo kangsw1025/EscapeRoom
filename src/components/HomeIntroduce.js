@@ -76,7 +76,7 @@ const IntroduceBodyIcon = styled.div`
   background-size: 100% 255px;
 `;
 
-function IntroduceContainer() {
+function HomeIntroduce() {
   return (
     <Introduce>
       <Header>
@@ -160,4 +160,4 @@ function IntroduceContainer() {
   );
 }
 
-export default IntroduceContainer;
+export default HomeIntroduce;
