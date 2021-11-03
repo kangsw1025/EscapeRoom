@@ -8,10 +8,11 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${props => props.background || "white"};
 `;
 
-function MainContainer({ children }) {
-  return <MainDiv>{children}</MainDiv>;
+function MainContainer({ background, children }) {
+  return <MainDiv background={background}>{children}</MainDiv>;
 }
 
 export default MainContainer;

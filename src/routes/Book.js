@@ -1,7 +1,7 @@
 import React from "react";
 
-function Reservation() {
+function Book() {
   return <div>테마</div>;
 }
 
-export default Reservation;
+export default Book;

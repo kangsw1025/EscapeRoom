@@ -9,7 +9,7 @@ const PlayTime = styled.div`
   padding: 0;
 `;
 
-function ThemaPlayTime({ playTime }) {
+function HomeThemaPlayTime({ playTime }) {
   return (
     <PlayTime>
       <img
@@ -23,4 +23,4 @@ function ThemaPlayTime({ playTime }) {
   );
 }
 
-export default ThemaPlayTime;
+export default HomeThemaPlayTime;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ThemaInfo } from "./ThemaInfoes";
-import Thema from "./Thema";
+import HomeThemaView from "./HomeThemaView";
 
 const ThemaContainer = styled.div`
   width: 100%;
@@ -58,7 +58,7 @@ export default () => {
       </Header>
       <ThemaBoxes>
         {ThemaInfo.map(info => (
-          <Thema info={info} />
+          <HomeThemaView info={info} />
         ))}
       </ThemaBoxes>
     </ThemaContainer>

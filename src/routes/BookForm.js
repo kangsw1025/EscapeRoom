@@ -1,7 +1,7 @@
 import React from "react";
 
-function ReservationForm() {
+function BookForm() {
   return <div>예약 정보 입력</div>;
 }
 
-export default ReservationForm;
+export default BookForm;

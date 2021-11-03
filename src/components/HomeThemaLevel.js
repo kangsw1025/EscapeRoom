@@ -6,7 +6,7 @@ const LevelImg = styled.div`
   padding-left: 10px;
 `;
 
-function ThemaLevel({ level }) {
+function HomeThemaLevel({ level }) {
   const component = [];
   const init = level => {
     const fillStar = React.createElement("img", {
@@ -19,7 +19,6 @@ function ThemaLevel({ level }) {
       width: "25px",
       height: "25px",
     });
-    console.log(component, fillStar, emptyStar, level);
 
     for (let i = 1; i <= level; i++) {
       component.push(fillStar);
@@ -33,4 +32,4 @@ function ThemaLevel({ level }) {
   return <LevelImg>{component}</LevelImg>;
 }
 
-export default ThemaLevel;
+export default HomeThemaLevel;

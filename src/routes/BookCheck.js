@@ -1,7 +1,7 @@
 import React from "react";
 
-function ReservationCheck() {
+function BookCheck() {
   return <div>예약 조회/취소</div>;
 }
 
-export default ReservationCheck;
+export default BookCheck;

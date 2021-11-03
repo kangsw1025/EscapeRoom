@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import ThemaLevel from "./ThemaLevel";
-import ThemaPlayTime from "./ThemaPlayTime";
+import HomeThemaLevel from "./HomeThemaLevel";
+import HomeThemaPlayTime from "./HomeThemaPlayTime";
+import { Link } from "react-router-dom";
 
 const ThemaBox = styled.div`
   width: 300px;
@@ -75,12 +76,14 @@ function Thema({ info }) {
       <ThemaInfo>
         <ThemaTitle>{title}</ThemaTitle>
         <ThemaState>
-          <ThemaLevel level={parseInt(level)} />
-          <ThemaPlayTime playTime={playTime} />
+          <HomeThemaLevel level={parseInt(level)} />
+          <HomeThemaPlayTime playTime={playTime} />
         </ThemaState>
         <ThemaContents>{contents}</ThemaContents>
       </ThemaInfo>
-      <ThemaBook>예약하기</ThemaBook>
+      <Link to={`/book/${title}`} style={{ textDecoration: "none" }}>
+        <ThemaBook>예약하기</ThemaBook>
+      </Link>
     </ThemaBox>
   );
 }

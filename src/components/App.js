@@ -1,20 +1,28 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import styled from "styled-components";
 import Home from "../routes/Home";
-import Reservation from "../routes/Reservation";
-import ReservationCheck from "../routes/ReservationCheck";
-import ReservationForm from "../routes/ReservationForm";
-import PublicContainer from "./PublicContainer";
+import Book from "../routes/Book";
+import BookCheck from "../routes/BookCheck";
+import BookForm from "../routes/BookForm";
 import Sidebar from "./Sidebar";
+
+const PublicContainer = styled.div`
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+`;
 
 function App() {
   return (
     <PublicContainer>
       <Sidebar />
       <Route path="/" component={Home} exact />
-      <Route path="/book" component={Reservation} />
-      <Route path="/bookCheck" component={ReservationCheck} />
-      <Route path="/bookForm" component={ReservationForm} />
+      <Route path="/book" component={Book} exact />
+      <Route path="/book/:title" component={Book} />
+      <Route path="/bookCheck" component={BookCheck} />
+      <Route path="/bookForm" component={BookForm} />
     </PublicContainer>
   );
 }
