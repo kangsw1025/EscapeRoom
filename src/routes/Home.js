@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import MainContainer from "../components/MainContainer";
 import HomeCaution from "../components/HomeCaution";
 import HomeIntroduce from "../components/HomeIntroduce";
-import HomeThemaContainer from "../components/HomeThemaContainer";
+import HomeThema from "../components/HomeThema";
 import HomeMap from "../components/HomeMap";
+import { useDispatch } from "react-redux";
+import { setReset } from "../modules/book";
 
 const MainBG = styled.div`
   position: relative;
@@ -20,12 +22,19 @@ const MainBG = styled.div`
 `;
 
 function Home() {
+  const dispatch = useDispatch();
+  const onSetReset = () => dispatch(setReset());
+
+  useEffect(() => {
+    onSetReset();
+  }, []);
+
   return (
     <MainContainer>
       <MainBG />
       <HomeIntroduce />
       <HomeCaution />
-      <HomeThemaContainer />
+      <HomeThema />
       <HomeMap />
     </MainContainer>
   );

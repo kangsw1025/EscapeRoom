@@ -81,9 +81,14 @@ function Thema({ info }) {
         </ThemaState>
         <ThemaContents>{contents}</ThemaContents>
       </ThemaInfo>
-      <Link to={`/book/${title}`} style={{ textDecoration: "none" }}>
-        <ThemaBook>예약하기</ThemaBook>
-      </Link>
+      <ThemaBook>
+        <Link
+          to={`/book_1/${title}`}
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          예약하기
+        </Link>
+      </ThemaBook>
     </ThemaBox>
   );
 }

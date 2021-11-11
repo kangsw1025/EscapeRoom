@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Container = styled.div`
   width: 10%;
@@ -45,45 +45,31 @@ const Menu = styled.li`
   }
 `;
 
-const Github = styled.div`
-  margin-top: 40%;
-  width: calc(666px * 0.35);
-  min-width: calc(666px * 0.35);
-  height: calc(375px * 0.4);
-  min-height: calc(375px * 0.4);
-  background-image: url("https://user-images.githubusercontent.com/62426665/139083738-553709a8-4e53-479f-b5c9-54a8777b53de.png");
-  background-size: 100% 100%;
-  cursor: pointer;
-`;
-
 function Sidebar() {
-  const clickGithub = () => {
-    window.open("https://github.com/kangsw1025/EscapeRoom");
+  const history = useHistory();
+
+  const onClickHome = () => {
+    history.push("/");
+  };
+
+  const onClickBook = () => {
+    history.push("/book_1");
+  };
+
+  const onClickCheckBook = () => {
+    history.push("/bookCheck");
   };
 
   return (
     <Container>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <MainLogo />
-      </Link>
+      <MainLogo onClick={onClickHome} />
       <MenuContainer>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Menu>홈</Menu>
-        </Link>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Menu>테마</Menu>
-        </Link>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Menu>오시는길</Menu>
-        </Link>
-        <Link to="/book" style={{ textDecoration: "none" }}>
-          <Menu>예약하기</Menu>
-        </Link>
-        <Link to="/bookCheck" style={{ textDecoration: "none" }}>
-          <Menu>예약조회/취소</Menu>
-        </Link>
+        <Menu onClick={onClickHome}>홈</Menu>
+        <Menu onClick={onClickHome}>테마</Menu>
+        <Menu onClick={onClickHome}>오시는길</Menu>
+        <Menu onClick={onClickBook}>예약하기</Menu>
+        <Menu onClick={onClickCheckBook}>예약조회/취소</Menu>
       </MenuContainer>
-      <Github onClick={clickGithub} />
     </Container>
   );
 }

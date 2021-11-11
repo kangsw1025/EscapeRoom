@@ -2,9 +2,10 @@ import React from "react";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
 import Home from "../routes/Home";
-import Book from "../routes/Book";
+import BookFirst from "../routes/BookFirst";
+import BookSecond from "../routes/BookSecond";
+import BookThird from "../routes/BookThird";
 import BookCheck from "../routes/BookCheck";
-import BookForm from "../routes/BookForm";
 import Sidebar from "./Sidebar";
 
 const PublicContainer = styled.div`
@@ -19,10 +20,11 @@ function App() {
     <PublicContainer>
       <Sidebar />
       <Route path="/" component={Home} exact />
-      <Route path="/book" component={Book} exact />
-      <Route path="/book/:title" component={Book} />
+      <Route path="/book_1" component={BookFirst} exact />
+      <Route path="/book_1/:title" component={BookFirst} />
+      <Route path="/book_2" component={BookSecond} />
+      <Route path="/book_3" component={BookThird} />
       <Route path="/bookCheck" component={BookCheck} />
-      <Route path="/bookForm" component={BookForm} />
     </PublicContainer>
   );
 }
