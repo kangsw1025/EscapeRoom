@@ -12,10 +12,9 @@ import {
   StepImage,
   StepText,
 } from "../css/StepStyledComponents";
-import { ThemaInfo } from "./ThemaInfoes";
 import BookThemaView from "./BookThemaView";
 import { addDays } from "date-fns";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setDate } from "../modules/book";
 
 const TimeContainer = styled.div`
@@ -55,6 +54,9 @@ const DatePickerButton = styled.button`
 
 function BookFirstStep({ title }) {
   const [selectDate, setSelectDate] = useState(new Date());
+  const { ThemaInfo } = useSelector(state => ({
+    ThemaInfo: state.thema,
+  }));
   const themas = title
     ? ThemaInfo.filter(thema => thema.title === title)
     : ThemaInfo;

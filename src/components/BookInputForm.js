@@ -10,6 +10,8 @@ import {
   setReset,
 } from "../modules/book";
 import { useHistory } from "react-router";
+import { dbService } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 import {
   Button,
   ButtonConainter,
@@ -70,7 +72,7 @@ function BookInputForm() {
     }
   };
 
-  const onClickBook = () => {
+  const onClickBook = async () => {
     if (booker === undefined) {
       window.alert("예약자 명을 입력해 주세요");
     } else if (email === undefined) {
@@ -80,7 +82,28 @@ function BookInputForm() {
     } else if (password.length < 4) {
       window.alert("비밀번호는 최소 4자리 이상 입력해 주세요");
     } else {
-      history.push("/book_3");
+      const infoObj = {
+        date,
+        title: thema.title,
+        bookTime,
+        booker,
+        email,
+        personnel,
+        cost,
+        password,
+        message: message ? message : " ",
+      };
+
+      try {
+        const docRef = await addDoc(
+          collection(dbService, thema.title),
+          infoObj
+        );
+        console.log(docRef.id);
+        history.push("/book_3");
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
     }
   };
 

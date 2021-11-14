@@ -1,5 +1,10 @@
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { dbService } from "../firebase";
+import { setBook } from "../modules/thema";
 import BookTimeView from "./BookTimeView";
 
 const Container = styled.div`
@@ -36,8 +41,34 @@ const PlayTimeContainer = styled.div`
 `;
 
 function BookThemaView({ thema, index }) {
-  const { title, imgUrl, level, playTime, contents, bookTime, isBooked } =
-    thema;
+  const { title, imgUrl, level, playTime, contents, isBooked } = thema;
+  const { date } = useSelector(state => ({
+    date: state.book.date,
+  }));
+  const dispatch = useDispatch();
+  const onSetBook = (title, time) => dispatch(setBook(title, time));
+  useEffect(() => {
+    if (date == null) return;
+    const q = query(collection(dbService, title), where("date", "==", date));
+    const unsubscribe = onSnapshot(q, querySnapshot => {
+      const newArray = querySnapshot.docs.map(doc => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+
+      newArray.forEach(array => {
+        onSetBook(array.title, array.bookTime);
+      });
+      console.log(newArray);
+      console.log(isBooked);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, [date]);
+
   return (
     <Container index={index}>
       <Image url={imgUrl} />
@@ -48,11 +79,11 @@ function BookThemaView({ thema, index }) {
         </div>
         {contents}
         <PlayTimeContainer>
-          {bookTime.map(booktime => (
+          {isBooked.map(booktime => (
             <BookTimeView
               thema={thema}
-              time={booktime}
-              isBooked={Boolean(isBooked[booktime])}
+              time={booktime.time}
+              isBooked={Boolean(booktime.booked)}
             />
           ))}
         </PlayTimeContainer>
