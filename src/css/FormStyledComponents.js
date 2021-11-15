@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const InputForm = styled.div`
-  height: calc(10.8px * 70);
+  height: auto;
   width: calc(19.2px * 60);
   margin-top: 30px;
 `;

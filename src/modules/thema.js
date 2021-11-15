@@ -1,9 +1,13 @@
-const SET_BOOK = "SET_BOOK";
-
+const SET_BOOK = "thema/SET_BOOK";
+const SET_RESET = "thema/SET_RESET";
 export const setBook = (title, time) => ({
   type: SET_BOOK,
   title,
   time,
+});
+
+export const setReset = () => ({
+  type: SET_RESET,
 });
 
 const iniitialState = [
@@ -103,6 +107,8 @@ export default function thema(state = iniitialState, action) {
             }
           : thema
       );
+    case SET_RESET:
+      return iniitialState;
     default:
       return state;
   }

@@ -1,13 +1,13 @@
-const SET_DATE = "SET_DATE";
-const SET_THEMA = "SET_THEMA";
-const SET_BOOK_TIME = "SET_BOOK_TIME";
-const SET_BOOKER = "SET_BOOKER";
-const SET_EMAIL = "SET_EMAIL";
-const SET_PERSONNEL = "SET_PERSONNEL";
-const SET_COST = "SET_COST";
-const SET_PASSWORD = "SET_PASSWORD";
-const SET_MESSAGE = "SET_MESSAGE";
-const SET_RESET = "SET_RESET";
+const SET_DATE = "book/SET_DATE";
+const SET_THEMA = "book/SET_THEMA";
+const SET_BOOK_TIME = "book/SET_BOOK_TIME";
+const SET_BOOKER = "book/SET_BOOKER";
+const SET_EMAIL = "book/SET_EMAIL";
+const SET_PERSONNEL = "book/SET_PERSONNEL";
+const SET_COST = "book/SET_COST";
+const SET_PASSWORD = "book/SET_PASSWORD";
+const SET_MESSAGE = "book/SET_MESSAGE";
+const SET_RESET = "book/SET_RESET";
 
 export const setDate = date => ({
   type: SET_DATE,

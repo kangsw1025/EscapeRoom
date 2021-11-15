@@ -75,7 +75,7 @@ function BookInputForm() {
   const onClickBook = async () => {
     if (booker === undefined) {
       window.alert("예약자 명을 입력해 주세요");
-    } else if (email === undefined) {
+    } else if (email === undefined || email.split("@").length < 2) {
       window.alert("이메일을 입력해 주세요");
     } else if (password === undefined) {
       window.alert("비밀번호를 입력해 주세요");
@@ -99,7 +99,11 @@ function BookInputForm() {
           collection(dbService, thema.title),
           infoObj
         );
-        console.log(docRef.id);
+        infoObj.id = docRef.id;
+        const docRef2 = await addDoc(
+          collection(dbService, infoObj.booker),
+          infoObj
+        );
         history.push("/book_3");
       } catch (e) {
         console.error("Error adding document: ", e);

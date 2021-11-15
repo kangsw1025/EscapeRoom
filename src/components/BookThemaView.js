@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { dbService } from "../firebase";
-import { setBook } from "../modules/thema";
+import { setBook, setReset } from "../modules/thema";
 import BookTimeView from "./BookTimeView";
 
 const Container = styled.div`
@@ -47,8 +47,23 @@ function BookThemaView({ thema, index }) {
   }));
   const dispatch = useDispatch();
   const onSetBook = (title, time) => dispatch(setBook(title, time));
+  const timeToMinute = time => {
+    return parseInt(time.slice(0, 2)) * 60 + parseInt(time.slice(3, 5));
+  };
+  const onReset = () => dispatch(setReset());
+
+  const formatDate = date => {
+    const year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    month = month < 10 ? month + 10 : month;
+    var day = date.getDate();
+    day = day < 10 ? day + 10 : day;
+    return year + "-" + month + "-" + day;
+  };
+
   useEffect(() => {
     if (date == null) return;
+    onReset();
     const q = query(collection(dbService, title), where("date", "==", date));
     const unsubscribe = onSnapshot(q, querySnapshot => {
       const newArray = querySnapshot.docs.map(doc => {
@@ -61,8 +76,21 @@ function BookThemaView({ thema, index }) {
       newArray.forEach(array => {
         onSetBook(array.title, array.bookTime);
       });
-      console.log(newArray);
-      console.log(isBooked);
+
+      const today = formatDate(new Date());
+      if (today == date) {
+        const nowTimeText = new Date().toLocaleTimeString();
+        const nowTime =
+          nowTimeText.slice(0, 2) === "오후"
+            ? 720 + timeToMinute(nowTimeText.slice(3, 8))
+            : timeToMinute(nowTimeText.slice(3, 8));
+
+        isBooked.forEach(array => {
+          if (timeToMinute(array.time) < nowTime) {
+            onSetBook(title, array.time);
+          }
+        });
+      }
     });
     return () => {
       unsubscribe();

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { ThemaInfo } from "./ThemaInfoes";
 import HomeThemaView from "./HomeThemaView";
+import { useSelector } from "react-redux";
 
 const ThemaContainer = styled.div`
   width: 100%;
@@ -46,6 +46,9 @@ const ThemaBoxes = styled.div`
 `;
 
 export default () => {
+  const { ThemaInfo } = useSelector(state => ({
+    ThemaInfo: state.thema,
+  }));
   return (
     <ThemaContainer>
       <Header>
