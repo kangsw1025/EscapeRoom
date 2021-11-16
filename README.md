@@ -43,6 +43,20 @@
 
   - 예약시 입력한 정보를 입력하여 예약 확인 및 취소 가능
 
+## 🎥 시연 이미지
+
+1. 메인 페이지
+
+   ![main](https://user-images.githubusercontent.com/62426665/141989511-9d76b7a0-9d7f-4969-b6b3-05f0833ab186.gif)
+
+2. 예약 페이지
+
+   ![book](https://user-images.githubusercontent.com/62426665/141990354-7dc5b174-36ea-4223-8bd6-5b8501d1a607.gif)
+
+3. 예약 확인/취소
+
+   ![bookCheckandCancel](https://user-images.githubusercontent.com/62426665/141990833-a7ffd2da-9050-4de6-bddc-a4e75b72a1f8.gif)
+
 ## 📄 호스팅 주소
 
 - [EscapeRoom](https://kangsw1025.github.io/EscapeRoom)
