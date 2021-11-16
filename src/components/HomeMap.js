@@ -24,7 +24,7 @@ const Map = styled.div`
   height: 700px;
 `;
 
-export default () => {
+export default function HomeMap() {
   const onClick = () => {
     window.open(
       "https://map.kakao.com/link/map/비밀의화원 시네마틱혜화,37.58332334071145,127.00096233213092"
@@ -56,4 +56,4 @@ export default () => {
       <Map id="map" onClick={onClick} />
     </MapContainer>
   );
-};
+}

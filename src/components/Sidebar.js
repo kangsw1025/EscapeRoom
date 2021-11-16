@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
   width: 10%;
@@ -48,8 +48,20 @@ const Menu = styled.li`
 function Sidebar() {
   const history = useHistory();
 
+  const onClickMain = () => {
+    history.push("/home");
+  };
+
   const onClickHome = () => {
-    history.push("/");
+    history.push("/home/home");
+  };
+
+  const onClickThema = () => {
+    history.push("/home/thema");
+  };
+
+  const onClickMap = () => {
+    history.push("/home/map");
   };
 
   const onClickBook = () => {
@@ -62,11 +74,11 @@ function Sidebar() {
 
   return (
     <Container>
-      <MainLogo onClick={onClickHome} />
+      <MainLogo onClick={onClickMain} />
       <MenuContainer>
         <Menu onClick={onClickHome}>홈</Menu>
-        <Menu onClick={onClickHome}>테마</Menu>
-        <Menu onClick={onClickHome}>오시는길</Menu>
+        <Menu onClick={onClickThema}>테마</Menu>
+        <Menu onClick={onClickMap}>오시는길</Menu>
         <Menu onClick={onClickBook}>예약하기</Menu>
         <Menu onClick={onClickCheckBook}>예약조회/취소</Menu>
       </MenuContainer>

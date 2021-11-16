@@ -108,8 +108,8 @@ function BookCheck() {
         <InputLine>
           <InputTitle>예약 현황</InputTitle>
           <InputBody>
-            {bookList.map(book => (
-              <BookListView book={book} />
+            {bookList.map((book, index) => (
+              <BookListView book={book} key={index} />
             ))}
           </InputBody>
         </InputLine>

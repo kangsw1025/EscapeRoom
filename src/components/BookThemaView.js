@@ -79,7 +79,7 @@ function BookThemaView({ thema, index }) {
       });
 
       const today = formatDate(new Date());
-      if (today == date) {
+      if (today === date) {
         const nowTimeText = new Date().toLocaleTimeString();
         const nowTime =
           nowTimeText.slice(0, 2) === "오후"
@@ -96,7 +96,7 @@ function BookThemaView({ thema, index }) {
     return () => {
       unsubscribe();
     };
-  }, [date]);
+  }, [title]);
 
   return (
     <Container index={index}>
@@ -108,11 +108,12 @@ function BookThemaView({ thema, index }) {
         </div>
         {contents}
         <PlayTimeContainer>
-          {isBooked.map(booktime => (
+          {isBooked.map((booktime, index) => (
             <BookTimeView
               thema={thema}
               time={booktime.time}
               isBooked={Boolean(booktime.booked)}
+              key={index}
             />
           ))}
         </PlayTimeContainer>

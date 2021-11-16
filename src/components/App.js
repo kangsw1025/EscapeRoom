@@ -10,7 +10,6 @@ import Sidebar from "./Sidebar";
 
 const PublicContainer = styled.div`
   display: flex;
-  overflow: hidden;
   width: 100%;
   height: 100vh;
 `;
@@ -19,12 +18,13 @@ function App() {
   return (
     <PublicContainer>
       <Sidebar />
-      <Route path="/" component={Home} exact />
+      <Route path="/home" component={Home} exact />
+      <Route path="/home/:element" component={Home} exact />
       <Route path="/book_1" component={BookFirst} exact />
-      <Route path="/book_1/:title" component={BookFirst} />
-      <Route path="/book_2" component={BookSecond} />
-      <Route path="/book_3" component={BookThird} />
-      <Route path="/bookCheck" component={BookCheck} />
+      <Route path="/book_1/:title" component={BookFirst} exact />
+      <Route path="/book_2" component={BookSecond} exact />
+      <Route path="/book_3" component={BookThird} exact />
+      <Route path="/bookCheck" component={BookCheck} exact />
     </PublicContainer>
   );
 }

@@ -21,13 +21,18 @@ const MainBG = styled.div`
   background-position: center;
 `;
 
-function Home() {
+function Home({ match }) {
+  const { element } = match.params;
   const dispatch = useDispatch();
   const onSetReset = () => dispatch(setReset());
-
   useEffect(() => {
     onSetReset();
-  }, []);
+    if (element === "thema" || element === "map" || element === "home") {
+      document
+        .getElementById(`${element}`)
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  }, [element]);
 
   return (
     <MainContainer>

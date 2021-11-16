@@ -118,7 +118,7 @@ function BookFirstStep({ title }) {
       </TimeContainer>
       <ThemaViewContainer>
         {themas.map((thema, index) => (
-          <BookThemaView thema={thema} index={index} />
+          <BookThemaView thema={thema} index={index} key={index} />
         ))}
       </ThemaViewContainer>
     </PublicStepContainer>

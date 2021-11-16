@@ -45,12 +45,12 @@ const ThemaBoxes = styled.div`
   max-width: calc(19.2px * 70);
 `;
 
-export default () => {
+export default function HomeThema() {
   const { ThemaInfo } = useSelector(state => ({
     ThemaInfo: state.thema,
   }));
   return (
-    <ThemaContainer>
+    <ThemaContainer id="thema">
       <Header>
         <HeaderTitle>테 마</HeaderTitle>
         <HeaderBody>
@@ -60,10 +60,10 @@ export default () => {
         </HeaderBody>
       </Header>
       <ThemaBoxes>
-        {ThemaInfo.map(info => (
-          <HomeThemaView info={info} />
+        {ThemaInfo.map((info, index) => (
+          <HomeThemaView info={info} key={index} />
         ))}
       </ThemaBoxes>
     </ThemaContainer>
   );
-};
+}

@@ -14,6 +14,7 @@ function HomeThemaPlayTime({ playTime }) {
     <PlayTime>
       <img
         src="https://user-images.githubusercontent.com/62426665/139075163-7381eff0-3c36-4a5f-997a-3922715e5f8f.png"
+        alt="thema"
         width="25px"
         height="25px"
         style={{ marginLeft: "20px", marginRight: "7px" }}
