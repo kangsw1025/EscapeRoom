@@ -18,6 +18,7 @@ import {
   InputTitle,
 } from "../css/FormStyledComponents";
 import { useHistory } from "react-router";
+import { useCallback } from "react";
 
 const InformationContainer = styled.div`
   width: 100%;
@@ -63,9 +64,9 @@ function BookThirdStep() {
     }));
 
   const history = useHistory();
-  const onClickHome = () => {
+  const onClickHome = useCallback(() => {
     history.push("/EscapeRoom/Home");
-  };
+  }, [history]);
 
   return (
     <PublicStepContainer>

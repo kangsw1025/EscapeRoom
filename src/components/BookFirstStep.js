@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useCallback, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styled from "styled-components";
@@ -67,20 +67,23 @@ function BookFirstStep({ title }) {
     </DatePickerButton>
   ));
 
-  const canBookDays = () => {
+  const canBookDays = useCallback(() => {
     const days = [];
     for (let i = 0; i < 14; i++) {
       days.push(addDays(new Date(), i));
     }
     return days;
-  };
+  }, []);
 
   const dispatch = useDispatch();
-  const onSetDate = date => dispatch(setDate(date));
-  const onChangeDate = date => {
-    setSelectDate(date);
-    onSetDate(JSON.stringify(date).slice(1, 11));
-  };
+  const onSetDate = useCallback(date => dispatch(setDate(date)), [dispatch]);
+  const onChangeDate = useCallback(
+    date => {
+      setSelectDate(date);
+      onSetDate(JSON.stringify(date).slice(1, 11));
+    },
+    [onSetDate]
+  );
 
   useEffect(async () => {
     await setSelectDate(new Date());

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { setBookTime, setThema } from "../modules/book";
+import { useCallback } from "react";
 
 const BookBox = styled.div`
   width: 100px;
@@ -34,11 +35,11 @@ function BookTimeView({ thema, time, isBooked }) {
   const onSetThema = thema => dispatch(setThema(thema));
   const history = useHistory();
 
-  const onClick = () => {
+  const onClick = useCallback(() => {
     onSetThema(thema);
     onSetBookTime(time);
     history.push("/EscapeRoom/book_2");
-  };
+  }, [thema, time]);
 
   return (
     <BookBox isBooked={isBooked} onClick={isBooked ? null : onClick}>

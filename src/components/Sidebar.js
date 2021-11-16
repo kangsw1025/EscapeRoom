@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
@@ -48,29 +48,29 @@ const Menu = styled.li`
 function Sidebar() {
   const history = useHistory();
 
-  const onClickHome = () => {
+  const onClickHome = useCallback(() => {
     history.push("/EscapeRoom/Home");
-  };
+  }, [history]);
 
-  const onClickMain = () => {
+  const onClickMain = useCallback(() => {
     history.push("/EscapeRoom/Home/main");
-  };
+  }, [history]);
 
-  const onClickThema = () => {
+  const onClickThema = useCallback(() => {
     history.push("/EscapeRoom/Home/thema");
-  };
+  }, [history]);
 
-  const onClickMap = () => {
+  const onClickMap = useCallback(() => {
     history.push("/EscapeRoom/Home/map");
-  };
+  }, [history]);
 
-  const onClickBook = () => {
+  const onClickBook = useCallback(() => {
     history.push("/EscapeRoom/book_1");
-  };
+  }, [history]);
 
-  const onClickCheckBook = () => {
+  const onClickCheckBook = useCallback(() => {
     history.push("/EscapeRoom/bookCheck");
-  };
+  }, [history]);
 
   return (
     <Container>

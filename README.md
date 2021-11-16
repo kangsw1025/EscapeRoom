@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# EscapeRoom
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Why EscapeRoom ❓
 
-## Available Scripts
+자기가 좋아하는 것과 관련된 프로젝트를 하면 좋겠다는 지인의 말을 듣고 내가 좋아하는 방탈출을 예약하는 사이트를 구현해보고자 했고, 평소 좋아하는 [비밀의화원](http://www.secretgardenescape.com/index.html)을 참고하여 만들었다.
 
-In the project directory, you can run:
+## 🚩 프로젝트 기간
 
-### `yarn start`
+2021년 10월 19일 ~ 11월 16일 (4주)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📕 사용 기술
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- HTML
+- CSS
+- React
+- styled-component
+- datepicker
+- Firebase
+- kakao map API
 
-### `yarn test`
+## 💻 구현 페이지
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 메인 페이지
 
-### `yarn build`
+  - 소개 및 주의사항
+  - 테마 프리뷰
+    - 예약 버튼 클릭시 해당 테마 예약 페이지로 이동
+  - kakao map API를 통한 지도
+    <br>
+    <br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 예약 페이지
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - 날짜 선택
+  - 간단한 테마 설명 및 예약 가능 시간
+    - 예약 가능할 때만 클릭시 예약 정보 입력 페이지로 이동
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 예약 정보 입력
 
-### `yarn eject`
+  - 예약 정보 입력 폼
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 예약 확인/취소
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - 예약시 입력한 정보를 입력하여 예약 확인 및 취소 가능
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📄 호스팅 주소
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [EscapeRoom](https://kangsw1025.github.io/EscapeRoom)

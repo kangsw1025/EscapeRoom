@@ -1,5 +1,5 @@
 import { deleteDoc, doc } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { dbService } from "../firebase";
 
@@ -32,13 +32,13 @@ function BookListView({ book }) {
   const name = book[4];
   const docId = book[5];
 
-  const onClickCancel = async () => {
+  const onClickCancel = useCallback(async () => {
     const ok = window.confirm("예약 취소하시겠습니까?");
     if (ok) {
       await deleteDoc(doc(dbService, title, `${id}`));
       await deleteDoc(doc(dbService, name, `${docId}`));
     }
-  };
+  }, [docId, id, name, title]);
 
   useEffect(() => {
     const today = new Date().toLocaleDateString();

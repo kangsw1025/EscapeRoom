@@ -1,5 +1,6 @@
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import React from "react";
+import { useCallback } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
@@ -46,21 +47,24 @@ function BookThemaView({ thema, index }) {
     date: state.book.date,
   }));
   const dispatch = useDispatch();
-  const onSetBook = (title, time) => dispatch(setBook(title, time));
-  const timeToMinute = time => {
+  const onSetBook = useCallback(
+    (title, time) => dispatch(setBook(title, time)),
+    [dispatch]
+  );
+  const timeToMinute = useCallback(time => {
     const h = parseInt(time.slice(0, 2));
     return (h === 12 ? 0 : h) * 60 + parseInt(time.slice(3, 5));
-  };
-  const onReset = () => dispatch(setReset());
+  }, []);
+  const onReset = useCallback(() => dispatch(setReset()), [dispatch]);
 
-  const formatDate = date => {
+  const formatDate = useCallback(date => {
     const year = date.getFullYear();
     var month = date.getMonth() + 1;
     month = month < 10 ? month + 10 : month;
     var day = date.getDate();
     day = day < 10 ? day + 10 : day;
     return year + "-" + month + "-" + day;
-  };
+  }, []);
 
   useEffect(() => {
     if (date == null) return;
@@ -96,7 +100,7 @@ function BookThemaView({ thema, index }) {
     return () => {
       unsubscribe();
     };
-  }, [title]);
+  }, [date]);
 
   return (
     <Container index={index}>

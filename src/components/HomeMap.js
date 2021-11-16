@@ -1,5 +1,5 @@
 /*global kakao*/
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import styled from "styled-components";
 
 const MapContainer = styled.div`
@@ -26,11 +26,11 @@ const Map = styled.div`
 `;
 
 export default function HomeMap() {
-  const onClick = () => {
+  const onClick = useCallback(() => {
     window.open(
       "https://map.kakao.com/link/map/비밀의화원 시네마틱혜화,37.58332334071145,127.00096233213092"
     );
-  };
+  }, []);
 
   useEffect(() => {
     var container = document.getElementById("map");

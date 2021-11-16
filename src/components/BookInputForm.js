@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setBooker,
@@ -46,33 +46,54 @@ function BookInputForm() {
     message: state.book.message,
   }));
   const dispatch = useDispatch();
-  const onSetBooker = booker => dispatch(setBooker(booker));
-  const onSetEmail = email => dispatch(setEmail(email));
-  const onSetPersonnel = personnel => dispatch(setPersonnel(personnel));
-  const onSetCost = cost => dispatch(setCost(cost));
-  const onSetPassWord = password => dispatch(setPassword(password));
-  const onSetMessage = message => dispatch(setMessage(message));
-  const onSetReset = () => dispatch(setReset());
+  const onSetBooker = useCallback(
+    booker => dispatch(setBooker(booker)),
+    [dispatch]
+  );
+  const onSetEmail = useCallback(
+    email => dispatch(setEmail(email)),
+    [dispatch]
+  );
+  const onSetPersonnel = useCallback(
+    personnel => dispatch(setPersonnel(personnel)),
+    [dispatch]
+  );
+  const onSetCost = useCallback(cost => dispatch(setCost(cost)), [dispatch]);
+  const onSetPassWord = useCallback(
+    password => dispatch(setPassword(password)),
+    [dispatch]
+  );
+  const onSetMessage = useCallback(
+    message => dispatch(setMessage(message)),
+    [dispatch]
+  );
+  const onSetReset = useCallback(() => dispatch(setReset()), [dispatch]);
   const history = useHistory();
 
-  const onClick = e => {
-    onSetPersonnel(parseInt(e.target.value) / thema.price);
-    onSetCost(e.target.value);
-  };
+  const onClick = useCallback(
+    e => {
+      onSetPersonnel(parseInt(e.target.value) / thema.price);
+      onSetCost(e.target.value);
+    },
+    [onSetCost, onSetPersonnel, thema.price]
+  );
 
-  const onChange = e => {
-    if (e.target.name === "booker") {
-      onSetBooker(e.target.value);
-    } else if (e.target.name === "email") {
-      onSetEmail(e.target.value);
-    } else if (e.target.name === "password") {
-      onSetPassWord(e.target.value);
-    } else if (e.target.name === "message") {
-      onSetMessage(e.target.value);
-    }
-  };
+  const onChange = useCallback(
+    e => {
+      if (e.target.name === "booker") {
+        onSetBooker(e.target.value);
+      } else if (e.target.name === "email") {
+        onSetEmail(e.target.value);
+      } else if (e.target.name === "password") {
+        onSetPassWord(e.target.value);
+      } else if (e.target.name === "message") {
+        onSetMessage(e.target.value);
+      }
+    },
+    [onSetBooker, onSetEmail, onSetPassWord, onSetMessage]
+  );
 
-  const onClickBook = async () => {
+  const onClickBook = useCallback(async () => {
     if (booker === undefined) {
       window.alert("예약자 명을 입력해 주세요");
     } else if (email === undefined || email.split("@").length < 2) {
@@ -109,12 +130,23 @@ function BookInputForm() {
         console.error("Error adding document: ", e);
       }
     }
-  };
+  }, [
+    bookTime,
+    booker,
+    cost,
+    date,
+    email,
+    history,
+    message,
+    password,
+    personnel,
+    thema.title,
+  ]);
 
-  const onClickCancle = () => {
+  const onClickCancle = useCallback(() => {
     onSetReset();
     history.push("/EscapeRoom/book_1");
-  };
+  }, [onSetReset, history]);
 
   useEffect(() => {
     onSetPersonnel(1);
