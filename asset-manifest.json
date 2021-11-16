@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/EscapeRoom/static/js/main.054ca105.chunk.js",
-    "main.js.map": "/EscapeRoom/static/js/main.054ca105.chunk.js.map",
+    "main.js": "/EscapeRoom/static/js/main.8442c0a1.chunk.js",
+    "main.js.map": "/EscapeRoom/static/js/main.8442c0a1.chunk.js.map",
     "runtime-main.js": "/EscapeRoom/static/js/runtime-main.f7782bd5.js",
     "runtime-main.js.map": "/EscapeRoom/static/js/runtime-main.f7782bd5.js.map",
     "static/css/2.c8956ef5.chunk.css": "/EscapeRoom/static/css/2.c8956ef5.chunk.css",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.f7782bd5.js",
     "static/css/2.c8956ef5.chunk.css",
     "static/js/2.4fa94ba2.chunk.js",
-    "static/js/main.054ca105.chunk.js"
+    "static/js/main.8442c0a1.chunk.js"
   ]
 }
