@@ -104,7 +104,7 @@ function BookInputForm() {
           collection(dbService, infoObj.booker),
           infoObj
         );
-        history.push("/book_3");
+        history.push("/EscapeRoom/book_3");
       } catch (e) {
         console.error("Error adding document: ", e);
       }
@@ -113,7 +113,7 @@ function BookInputForm() {
 
   const onClickCancle = () => {
     onSetReset();
-    history.push("/book_1");
+    history.push("/EscapeRoom/book_1");
   };
 
   useEffect(() => {

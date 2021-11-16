@@ -78,7 +78,7 @@ const IntroduceBodyIcon = styled.div`
 
 function HomeIntroduce() {
   return (
-    <Introduce id="home">
+    <Introduce id="main">
       <Header>
         <LogoIcon />
         <HeaderText>

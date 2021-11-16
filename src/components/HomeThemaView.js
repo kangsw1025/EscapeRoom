@@ -83,7 +83,7 @@ function Thema({ info }) {
       </ThemaInfo>
       <ThemaBook>
         <Link
-          to={`/book_1/${title}`}
+          to={`/EscapeRoom/book_1/${title}`}
           style={{ textDecoration: "none", color: "white" }}
         >
           예약하기

@@ -27,7 +27,7 @@ function Home({ match }) {
   const onSetReset = () => dispatch(setReset());
   useEffect(() => {
     onSetReset();
-    if (element === "thema" || element === "map" || element === "home") {
+    if (element === "thema" || element === "map" || element === "main") {
       document
         .getElementById(`${element}`)
         .scrollIntoView({ behavior: "smooth" });

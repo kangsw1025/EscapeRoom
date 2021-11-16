@@ -64,7 +64,7 @@ function BookThirdStep() {
 
   const history = useHistory();
   const onClickHome = () => {
-    history.push("/");
+    history.push("/EscapeRoom/Home");
   };
 
   return (

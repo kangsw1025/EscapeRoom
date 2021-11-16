@@ -48,35 +48,35 @@ const Menu = styled.li`
 function Sidebar() {
   const history = useHistory();
 
-  const onClickMain = () => {
-    history.push("/home");
+  const onClickHome = () => {
+    history.push("/EscapeRoom/Home");
   };
 
-  const onClickHome = () => {
-    history.push("/home/home");
+  const onClickMain = () => {
+    history.push("/EscapeRoom/Home/main");
   };
 
   const onClickThema = () => {
-    history.push("/home/thema");
+    history.push("/EscapeRoom/Home/thema");
   };
 
   const onClickMap = () => {
-    history.push("/home/map");
+    history.push("/EscapeRoom/Home/map");
   };
 
   const onClickBook = () => {
-    history.push("/book_1");
+    history.push("/EscapeRoom/book_1");
   };
 
   const onClickCheckBook = () => {
-    history.push("/bookCheck");
+    history.push("/EscapeRoom/bookCheck");
   };
 
   return (
     <Container>
-      <MainLogo onClick={onClickMain} />
+      <MainLogo onClick={onClickHome} />
       <MenuContainer>
-        <Menu onClick={onClickHome}>홈</Menu>
+        <Menu onClick={onClickMain}>홈</Menu>
         <Menu onClick={onClickThema}>테마</Menu>
         <Menu onClick={onClickMap}>오시는길</Menu>
         <Menu onClick={onClickBook}>예약하기</Menu>

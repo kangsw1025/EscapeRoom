@@ -37,7 +37,7 @@ function BookTimeView({ thema, time, isBooked }) {
   const onClick = () => {
     onSetThema(thema);
     onSetBookTime(time);
-    history.push("/book_2");
+    history.push("/EscapeRoom/book_2");
   };
 
   return (

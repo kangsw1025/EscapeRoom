@@ -22,6 +22,7 @@ const Header = styled.div`
 const Map = styled.div`
   width: 900px;
   height: 700px;
+  cursor: pointer;
 `;
 
 export default function HomeMap() {

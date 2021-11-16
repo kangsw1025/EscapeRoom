@@ -18,13 +18,14 @@ function App() {
   return (
     <PublicContainer>
       <Sidebar />
-      <Route path="/home" component={Home} exact />
-      <Route path="/home/:element" component={Home} exact />
-      <Route path="/book_1" component={BookFirst} exact />
-      <Route path="/book_1/:title" component={BookFirst} exact />
-      <Route path="/book_2" component={BookSecond} exact />
-      <Route path="/book_3" component={BookThird} exact />
-      <Route path="/bookCheck" component={BookCheck} exact />
+      <Route path="/EscapeRoom/" component={Home} exact />
+      <Route path="/EscapeRoom/Home" component={Home} exact />
+      <Route path="/EscapeRoom/Home/:element" component={Home} exact />
+      <Route path="/EscapeRoom/book_1" component={BookFirst} exact />
+      <Route path="/EscapeRoom/book_1/:title" component={BookFirst} exact />
+      <Route path="/EscapeRoom/book_2" component={BookSecond} exact />
+      <Route path="/EscapeRoom/book_3" component={BookThird} exact />
+      <Route path="/EscapeRoom/bookCheck" component={BookCheck} exact />
     </PublicContainer>
   );
 }
