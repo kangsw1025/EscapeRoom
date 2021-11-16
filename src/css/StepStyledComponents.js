@@ -90,3 +90,7 @@ export const PublicStepContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export function PublicHeader() {
+  return <Header>테마 예약하기</Header>;
+}

@@ -42,6 +42,7 @@ const MainBtn = styled.div`
   color: white;
   font-size: 24px;
   border-radius: 50px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,7 +121,7 @@ function BookThirdStep() {
           </InputLine>
           <InputLine>
             <InputTitle>참가 요금</InputTitle>
-            <InputBody>{cost}</InputBody>
+            <InputBody>{cost} 원</InputBody>
           </InputLine>
           <InputLine>
             <InputTitle>결제방식 선택</InputTitle>

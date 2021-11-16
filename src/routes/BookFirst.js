@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MainContainer from "../components/MainContainer";
-import { Header } from "../css/StepStyledComponents";
+import { PublicHeader } from "../css/StepStyledComponents";
 import BookFirstStep from "../components/BookFirstStep";
 import { useDispatch } from "react-redux";
 import { setReset } from "../modules/book";
@@ -16,7 +16,7 @@ function BookFirst({ match }) {
 
   return (
     <MainContainer background="#f8f9fa">
-      <Header>테마 예약하기</Header>
+      <PublicHeader />
       <BookFirstStep title={title} />
     </MainContainer>
   );

@@ -48,7 +48,8 @@ function BookThemaView({ thema, index }) {
   const dispatch = useDispatch();
   const onSetBook = (title, time) => dispatch(setBook(title, time));
   const timeToMinute = time => {
-    return parseInt(time.slice(0, 2)) * 60 + parseInt(time.slice(3, 5));
+    const h = parseInt(time.slice(0, 2));
+    return (h === 12 ? 0 : h) * 60 + parseInt(time.slice(3, 5));
   };
   const onReset = () => dispatch(setReset());
 

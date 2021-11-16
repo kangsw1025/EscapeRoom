@@ -21,8 +21,11 @@ export const Button = styled.button`
   font-size: 1.25rem;
   cursor: pointer;
   margin-top: 40px;
-  background: #a390ee;
+  background: #d5c2ee;
   color: white;
+  :hover {
+    background: #a390ee;
+  }
 `;
 
 function BookCheck() {
