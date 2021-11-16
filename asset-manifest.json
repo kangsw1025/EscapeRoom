@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/EscapeRoom/static/js/main.6cf34262.chunk.js",
-    "main.js.map": "/EscapeRoom/static/js/main.6cf34262.chunk.js.map",
-    "runtime-main.js": "/EscapeRoom/static/js/runtime-main.f7782bd5.js",
-    "runtime-main.js.map": "/EscapeRoom/static/js/runtime-main.f7782bd5.js.map",
-    "static/css/2.c8956ef5.chunk.css": "/EscapeRoom/static/css/2.c8956ef5.chunk.css",
-    "static/js/2.4fa94ba2.chunk.js": "/EscapeRoom/static/js/2.4fa94ba2.chunk.js",
-    "static/js/2.4fa94ba2.chunk.js.map": "/EscapeRoom/static/js/2.4fa94ba2.chunk.js.map",
-    "index.html": "/EscapeRoom/index.html",
-    "static/css/2.c8956ef5.chunk.css.map": "/EscapeRoom/static/css/2.c8956ef5.chunk.css.map",
-    "static/js/2.4fa94ba2.chunk.js.LICENSE.txt": "/EscapeRoom/static/js/2.4fa94ba2.chunk.js.LICENSE.txt"
+    "main.js": "/EscapeRoom/Home/static/js/main.e84eeaf3.chunk.js",
+    "main.js.map": "/EscapeRoom/Home/static/js/main.e84eeaf3.chunk.js.map",
+    "runtime-main.js": "/EscapeRoom/Home/static/js/runtime-main.9125b43a.js",
+    "runtime-main.js.map": "/EscapeRoom/Home/static/js/runtime-main.9125b43a.js.map",
+    "static/css/2.c8956ef5.chunk.css": "/EscapeRoom/Home/static/css/2.c8956ef5.chunk.css",
+    "static/js/2.220f6752.chunk.js": "/EscapeRoom/Home/static/js/2.220f6752.chunk.js",
+    "static/js/2.220f6752.chunk.js.map": "/EscapeRoom/Home/static/js/2.220f6752.chunk.js.map",
+    "index.html": "/EscapeRoom/Home/index.html",
+    "static/css/2.c8956ef5.chunk.css.map": "/EscapeRoom/Home/static/css/2.c8956ef5.chunk.css.map",
+    "static/js/2.220f6752.chunk.js.LICENSE.txt": "/EscapeRoom/Home/static/js/2.220f6752.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f7782bd5.js",
+    "static/js/runtime-main.9125b43a.js",
     "static/css/2.c8956ef5.chunk.css",
-    "static/js/2.4fa94ba2.chunk.js",
-    "static/js/main.6cf34262.chunk.js"
+    "static/js/2.220f6752.chunk.js",
+    "static/js/main.e84eeaf3.chunk.js"
   ]
 }
